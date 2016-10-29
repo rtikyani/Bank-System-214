@@ -1,0 +1,61 @@
+
+Rohit Tikyani
+Asst4 Bank System Test Plan
+
+Test0: Test Connection to Server
+Test1: Adding 1 or more clients
+Test2: Open new account Rohit Tikyani
+Test3:  Testing bank features (credit/debit/balance)
+Test4: Error Cases (name longer 100 characters, no duplicate names, no concurrent sessions)
+Test5: Finish and Exit
+
+Test Plan 0: Test Connection to Server
+
+./server
+
+./client localhost
+
+Test Plan 1: Adding 1 or more clients
+
+./server
+
+./client localhost
+
+./client localhost
+
+Test Plan 2: Open new account Rohit
+
+./server
+
+./client localhost
+open rohit
+
+Test Plan 3:  Testing bank features (credit/debit/balance)
+
+./server
+
+./client localhost
+open rohit
+start rohit
+credit 5
+debit 10
+balance
+
+Test Plan 4: Error Cases (no duplicate names, no concurrent sessions)
+
+./server
+
+./client localhost
+open rohit
+open rohit
+start rohit
+
+./client localhost
+start rohit
+
+Test Plan 5: Finish and Exit
+
+./server
+
+./client localhost
+exit

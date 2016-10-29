@@ -1,0 +1,134 @@
+Test Case 1:
+
+» ./server
+Client connected.
+
+-------------------------------------------------------------
+
+» ./client localhost
+Connected!
+
+Server Message: Please enter a command:
+
+-------------------------------------------------------------
+
+Test Case 2:
+
+» ./server
+Client connected.
+Client connected.
+
+-------------------------------------------------------------
+
+» ./client localhost
+Connected!
+
+Server Message: Please enter a command:
+
+-------------------------------------------------------------
+
+» ./client localhost
+Connected!
+
+Server Message: Please enter a command:
+
+-------------------------------------------------------------
+
+Test Case 3:
+
+» ./server
+Client connected.
+Server received message: 'open rohit'
+
+-------------------------------------------------------------
+
+» ./client localhost
+Connected!
+
+Server Message: Please enter a command:
+open rohit
+Message: Successfully opened account.
+
+-------------------------------------------------------------
+
+Test Case 4:
+
+» ./server
+Client connected.
+Server received message: 'open rohit'
+Server received message: 'start rohit'
+Server received message: 'credit 5'
+Server received message: 'debit 10'
+Server received message: 'balance'
+
+-------------------------------------------------------------
+
+» ./client localhost
+Connected!
+
+Server Message: Please enter a command:
+open rohit
+start rohit
+Message: Successfully connected to account.
+credit 5
+Balance:        $0.00
+Credit: $5.00
+New Balance:    $5.00
+debit 10
+Balance:        $5.00
+Withdrawing:    $10.00
+New Balance:    $-5.00
+balance
+Balance:        $-5.00
+
+-------------------------------------------------------------
+
+Test Case 5:
+
+» ./server
+Client connected.
+Client connected.
+Server received message: 'open rohit'
+Server received message: 'open rohit'
+Server received message: 'start rohit'
+Server received message: 'start rohit'
+
+-------------------------------------------------------------
+
+» ./client localhost
+Connected!
+
+Server Message: Please enter a command:
+open rohit
+Message: Successfully opened account.
+open rohit
+Message: Cannot create account, name already in use.
+start rohit
+Message: Successfully connected to account.
+
+-------------------------------------------------------------
+
+» ./client localhost
+Connected!
+
+Server Message: Please enter a command:
+start rohit
+Message: Account is already in use.
+
+-------------------------------------------------------------
+
+Test Case 6:
+
+» ./server
+Client connected.
+Client disconnected.
+
+-------------------------------------------------------------
+
+» ./client localhost
+Connected!
+
+Server Message: Please enter a command:
+exit
+
+-------------------------------------------------------------
